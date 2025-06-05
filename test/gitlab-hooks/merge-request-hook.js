@@ -13,218 +13,200 @@ export default {
     "object_kind": "merge_request",
     "event_type": "merge_request",
     "user": {
-      "id": 223,
-      "name": "王加豪",
-      "username": "王加豪",
-      "avatar_url": "https://secure.gravatar.com/avatar/dd38479a3e07367d7d685548565599be3021bc904bedcf75076bdd9ee86f7fce?s=80&d=identicon",
-      "email": "[REDACTED]"
+      "id": 1,
+      "name": "Administrator",
+      "username": "root",
+      "avatar_url": "http://www.gravatar.com/avatar/e64c7d89f26bd1972efa854d13d7dd61?s=40\u0026d=identicon",
+      "email": "admin@example.com"
     },
     "project": {
-      "id": 482,
-      "name": "ruoyi-vue-plus",
-      "description": null,
-      "web_url": "https://hellogitlab.top/ryf/java/ruoyi-vue-plus",
-      "avatar_url": null,
-      "git_ssh_url": "git@hellogitlab.top:ryf/java/ruoyi-vue-plus.git",
-      "git_http_url": "https://hellogitlab.top/ryf/java/ruoyi-vue-plus.git",
-      "namespace": "java",
-      "visibility_level": 0,
-      "path_with_namespace": "ryf/java/ruoyi-vue-plus",
-      "default_branch": "main",
-      "ci_config_path": "",
-      "homepage": "https://hellogitlab.top/ryf/java/ruoyi-vue-plus",
-      "url": "git@hellogitlab.top:ryf/java/ruoyi-vue-plus.git",
-      "ssh_url": "git@hellogitlab.top:ryf/java/ruoyi-vue-plus.git",
-      "http_url": "https://hellogitlab.top/ryf/java/ruoyi-vue-plus.git"
+      "id": 1,
+      "name":"Gitlab Test",
+      "description":"Aut reprehenderit ut est.",
+      "web_url":"http://example.com/gitlabhq/gitlab-test",
+      "avatar_url":null,
+      "git_ssh_url":"git@example.com:gitlabhq/gitlab-test.git",
+      "git_http_url":"http://example.com/gitlabhq/gitlab-test.git",
+      "namespace":"GitlabHQ",
+      "visibility_level":20,
+      "path_with_namespace":"gitlabhq/gitlab-test",
+      "default_branch":"master",
+      "ci_config_path":"",
+      "homepage":"http://example.com/gitlabhq/gitlab-test",
+      "url":"http://example.com/gitlabhq/gitlab-test.git",
+      "ssh_url":"git@example.com:gitlabhq/gitlab-test.git",
+      "http_url":"http://example.com/gitlabhq/gitlab-test.git"
+    },
+    "repository": {
+      "name": "Gitlab Test",
+      "url": "http://example.com/gitlabhq/gitlab-test.git",
+      "description": "Aut reprehenderit ut est.",
+      "homepage": "http://example.com/gitlabhq/gitlab-test"
     },
     "object_attributes": {
-      "assignee_id": 9,
-      "author_id": 223,
-      "created_at": "2025-06-05 15:04:15 +0800",
-      "description": "fix: b端人脸认证\n\nb端人脸认证\n\nChangelog: fix",
-      "draft": false,
-      "head_pipeline_id": 19425,
-      "id": 4979,
-      "iid": 607,
-      "last_edited_at": null,
-      "last_edited_by_id": null,
-      "merge_commit_sha": null,
-      "merge_error": null,
-      "merge_params": {
-        "force_remove_source_branch": "1"
-      },
-      "merge_status": "unchecked",
-      "merge_user_id": null,
-      "merge_when_pipeline_succeeds": false,
+      "id": 99,
+      "iid": 1,
+      "target_branch": "master",
+      "source_branch": "ms-viewport",
+      "source_project_id": 14,
+      "author_id": 51,
+      "assignee_ids": [6],
+      "assignee_id": 6,
+      "reviewer_ids": [6],
+      "title": "MS-Viewport",
+      "created_at": "2013-12-03T17:23:34Z",
+      "updated_at": "2013-12-03T17:23:34Z",
+      "last_edited_at": "2013-12-03T17:23:34Z",
+      "last_edited_by_id": 1,
       "milestone_id": null,
-      "source_branch": "feat/b-er-code",
-      "source_project_id": 482,
       "state_id": 1,
-      "target_branch": "test",
-      "target_project_id": 482,
-      "time_estimate": 0,
-      "title": "fix: b端人脸认证",
-      "updated_at": "2025-06-05 15:48:01 +0800",
-      "updated_by_id": null,
-      "prepared_at": "2025-06-05 15:04:22 +0800",
-      "assignee_ids": [
-        9
-      ],
-      "blocking_discussions_resolved": true,
-      "detailed_merge_status": "unchecked",
-      "first_contribution": false,
-      "human_time_change": null,
-      "human_time_estimate": null,
-      "human_total_time_spent": null,
-      "labels": [],
-      "last_commit": {
-        "id": "eee7db80b395994106c2f2e070c7a3dc2cce0c87",
-        "message": "fix: b端人脸认证,修改建议\n\nb端人脸认证,修改建议\n\nChangelog: fix\n",
-        "title": "fix: b端人脸认证,修改建议",
-        "timestamp": "2025-06-05T15:47:36+08:00",
-        "url": "https://hellogitlab.top/ryf/java/ruoyi-vue-plus/-/commit/eee7db80b395994106c2f2e070c7a3dc2cce0c87",
-        "author": {
-          "name": "陈海明",
-          "email": "[REDACTED]"
-        }
-      },
-      "reviewer_ids": [],
-      "source": {
-        "id": 482,
-        "name": "ruoyi-vue-plus",
-        "description": null,
-        "web_url": "https://hellogitlab.top/ryf/java/ruoyi-vue-plus",
-        "avatar_url": null,
-        "git_ssh_url": "git@hellogitlab.top:ryf/java/ruoyi-vue-plus.git",
-        "git_http_url": "https://hellogitlab.top/ryf/java/ruoyi-vue-plus.git",
-        "namespace": "java",
-        "visibility_level": 0,
-        "path_with_namespace": "ryf/java/ruoyi-vue-plus",
-        "default_branch": "main",
-        "ci_config_path": "",
-        "homepage": "https://hellogitlab.top/ryf/java/ruoyi-vue-plus",
-        "url": "git@hellogitlab.top:ryf/java/ruoyi-vue-plus.git",
-        "ssh_url": "git@hellogitlab.top:ryf/java/ruoyi-vue-plus.git",
-        "http_url": "https://hellogitlab.top/ryf/java/ruoyi-vue-plus.git"
-      },
       "state": "opened",
-      "target": {
-        "id": 482,
-        "name": "ruoyi-vue-plus",
-        "description": null,
-        "web_url": "https://hellogitlab.top/ryf/java/ruoyi-vue-plus",
-        "avatar_url": null,
-        "git_ssh_url": "git@hellogitlab.top:ryf/java/ruoyi-vue-plus.git",
-        "git_http_url": "https://hellogitlab.top/ryf/java/ruoyi-vue-plus.git",
-        "namespace": "java",
-        "visibility_level": 0,
-        "path_with_namespace": "ryf/java/ruoyi-vue-plus",
-        "default_branch": "main",
-        "ci_config_path": "",
-        "homepage": "https://hellogitlab.top/ryf/java/ruoyi-vue-plus",
-        "url": "git@hellogitlab.top:ryf/java/ruoyi-vue-plus.git",
-        "ssh_url": "git@hellogitlab.top:ryf/java/ruoyi-vue-plus.git",
-        "http_url": "https://hellogitlab.top/ryf/java/ruoyi-vue-plus.git"
-      },
-      "time_change": 0,
-      "total_time_spent": 0,
-      "url": "https://hellogitlab.top/ryf/java/ruoyi-vue-plus/-/merge_requests/607",
+      "blocking_discussions_resolved": true,
       "work_in_progress": false,
-      "approval_rules": [
-        {
-          "id": 1102,
-          "approvals_required": 0,
-          "name": "All Members",
-          "rule_type": "any_approver",
-          "report_type": null,
-          "merge_request_id": 4979,
-          "section": null,
-          "modified_from_project_rule": false,
-          "orchestration_policy_idx": null,
-          "vulnerabilities_allowed": 0,
-          "scanners": [],
-          "severity_levels": [],
-          "vulnerability_states": [
-            "new_needs_triage",
-            "new_dismissed"
-          ],
-          "security_orchestration_policy_configuration_id": null,
-          "scan_result_policy_id": null,
-          "applicable_post_merge": null,
-          "project_id": 482,
-          "approval_policy_rule_id": null,
-          "updated_at": "2025-06-05 15:04:15 +0800",
-          "created_at": "2025-06-05 15:04:15 +0800"
-        },
-        {
-          "id": 1103,
-          "approvals_required": 1,
-          "name": "测试分支合并",
-          "rule_type": "regular",
-          "report_type": null,
-          "merge_request_id": 4979,
-          "section": null,
-          "modified_from_project_rule": false,
-          "orchestration_policy_idx": null,
-          "vulnerabilities_allowed": 0,
-          "scanners": [],
-          "severity_levels": [],
-          "vulnerability_states": [
-            "new_needs_triage",
-            "new_dismissed"
-          ],
-          "security_orchestration_policy_configuration_id": null,
-          "scan_result_policy_id": null,
-          "applicable_post_merge": null,
-          "project_id": 482,
-          "approval_policy_rule_id": null,
-          "updated_at": "2025-06-05 15:04:15 +0800",
-          "created_at": "2025-06-05 15:04:15 +0800"
-        },
-        {
-          "id": 1104,
-          "approvals_required": 1,
-          "name": "生产分支合并",
-          "rule_type": "regular",
-          "report_type": null,
-          "merge_request_id": 4979,
-          "section": null,
-          "modified_from_project_rule": false,
-          "orchestration_policy_idx": null,
-          "vulnerabilities_allowed": 0,
-          "scanners": [],
-          "severity_levels": [],
-          "vulnerability_states": [
-            "new_needs_triage",
-            "new_dismissed"
-          ],
-          "security_orchestration_policy_configuration_id": null,
-          "scan_result_policy_id": null,
-          "applicable_post_merge": null,
-          "project_id": 482,
-          "approval_policy_rule_id": null,
-          "updated_at": "2025-06-05 15:04:15 +0800",
-          "created_at": "2025-06-05 15:04:15 +0800"
+      "draft": false,
+      "first_contribution": true,
+      "merge_status": "unchecked",
+      "target_project_id": 14,
+      "description": "",
+      "prepared_at": "2013-12-03T19:23:34Z",
+      "total_time_spent": 1800,
+      "time_change": 30,
+      "human_total_time_spent": "30m",
+      "human_time_change": "30s",
+      "human_time_estimate": "30m",
+      "url": "http://example.com/diaspora/merge_requests/1",
+      "source": {
+        "name":"Awesome Project",
+        "description":"Aut reprehenderit ut est.",
+        "web_url":"http://example.com/awesome_space/awesome_project",
+        "avatar_url":null,
+        "git_ssh_url":"git@example.com:awesome_space/awesome_project.git",
+        "git_http_url":"http://example.com/awesome_space/awesome_project.git",
+        "namespace":"Awesome Space",
+        "visibility_level":20,
+        "path_with_namespace":"awesome_space/awesome_project",
+        "default_branch":"master",
+        "homepage":"http://example.com/awesome_space/awesome_project",
+        "url":"http://example.com/awesome_space/awesome_project.git",
+        "ssh_url":"git@example.com:awesome_space/awesome_project.git",
+        "http_url":"http://example.com/awesome_space/awesome_project.git"
+      },
+      "target": {
+        "name":"Awesome Project",
+        "description":"Aut reprehenderit ut est.",
+        "web_url":"http://example.com/awesome_space/awesome_project",
+        "avatar_url":null,
+        "git_ssh_url":"git@example.com:awesome_space/awesome_project.git",
+        "git_http_url":"http://example.com/awesome_space/awesome_project.git",
+        "namespace":"Awesome Space",
+        "visibility_level":20,
+        "path_with_namespace":"awesome_space/awesome_project",
+        "default_branch":"master",
+        "homepage":"http://example.com/awesome_space/awesome_project",
+        "url":"http://example.com/awesome_space/awesome_project.git",
+        "ssh_url":"git@example.com:awesome_space/awesome_project.git",
+        "http_url":"http://example.com/awesome_space/awesome_project.git"
+      },
+      "last_commit": {
+        "id": "da1560886d4f094c3e6c9ef40349f7d38b5d27d7",
+        "message": "fixed readme",
+        "title": "Update file README.md",
+        "timestamp": "2012-01-03T23:36:29+02:00",
+        "url": "http://example.com/awesome_space/awesome_project/commits/da1560886d4f094c3e6c9ef40349f7d38b5d27d7",
+        "author": {
+          "name": "GitLab dev user",
+          "email": "gitlabdev@dv6700.(none)"
         }
-      ],
-      "action": "update",
-      "oldrev": "3b3e2fc6098099532eb4192e1f1756546be2296e"
+      },
+      "labels": [{
+        "id": 206,
+        "title": "API",
+        "color": "#ffffff",
+        "project_id": 14,
+        "created_at": "2013-12-03T17:15:43Z",
+        "updated_at": "2013-12-03T17:15:43Z",
+        "template": false,
+        "description": "API related issues",
+        "type": "ProjectLabel",
+        "group_id": 41
+      }],
+      "action": "open",
+      "detailed_merge_status": "mergeable"
     },
-    "labels": [],
-    "changes": {},
-    "repository": {
-      "name": "ruoyi-vue-plus",
-      "url": "git@hellogitlab.top:ryf/java/ruoyi-vue-plus.git",
-      "description": null,
-      "homepage": "https://hellogitlab.top/ryf/java/ruoyi-vue-plus"
+    "labels": [{
+      "id": 206,
+      "title": "API",
+      "color": "#ffffff",
+      "project_id": 14,
+      "created_at": "2013-12-03T17:15:43Z",
+      "updated_at": "2013-12-03T17:15:43Z",
+      "template": false,
+      "description": "API related issues",
+      "type": "ProjectLabel",
+      "group_id": 41
+    }],
+    "changes": {
+      "updated_by_id": {
+        "previous": null,
+        "current": 1
+      },
+      "draft": {
+        "previous": true,
+        "current": false
+      },
+      "updated_at": {
+        "previous": "2017-09-15 16:50:55 UTC",
+        "current":"2017-09-15 16:52:00 UTC"
+      },
+      "labels": {
+        "previous": [{
+          "id": 206,
+          "title": "API",
+          "color": "#ffffff",
+          "project_id": 14,
+          "created_at": "2013-12-03T17:15:43Z",
+          "updated_at": "2013-12-03T17:15:43Z",
+          "template": false,
+          "description": "API related issues",
+          "type": "ProjectLabel",
+          "group_id": 41
+        }],
+        "current": [{
+          "id": 205,
+          "title": "Platform",
+          "color": "#123123",
+          "project_id": 14,
+          "created_at": "2013-12-03T17:15:43Z",
+          "updated_at": "2013-12-03T17:15:43Z",
+          "template": false,
+          "description": "Platform related issues",
+          "type": "ProjectLabel",
+          "group_id": 41
+        }]
+      },
+      "last_edited_at": {
+        "previous": null,
+        "current": "2023-03-15 00:00:10 UTC"
+      },
+      "last_edited_by_id": {
+        "previous": null,
+        "current": 3278533
+      }
     },
     "assignees": [
       {
-        "id": 9,
-        "name": "王家豪",
-        "username": "wangjiahao",
-        "avatar_url": "https://hellogitlab.top/uploads/-/system/user/avatar/9/avatar.png",
-        "email": "[REDACTED]"
+        "id": 6,
+        "name": "User1",
+        "username": "user1",
+        "avatar_url": "http://www.gravatar.com/avatar/e64c7d89f26bd1972efa854d13d7dd61?s=40\u0026d=identicon"
+      }
+    ],
+    "reviewers": [
+      {
+        "id": 6,
+        "name": "User1",
+        "username": "user1",
+        "avatar_url": "http://www.gravatar.com/avatar/e64c7d89f26bd1972efa854d13d7dd61?s=40\u0026d=identicon"
       }
     ]
   }
