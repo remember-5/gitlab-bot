@@ -214,6 +214,13 @@ npm run dev
 
 ## Vercel部署指南
 
+### One-Click Deploy
+
+Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/remember-5/gitlab-bot&project-name=gitlab-bot&repository-name=gitlab-bot)
+
+
 ### 使用Vercel Dashboard部署
 
 1. 登录[Vercel](https://vercel.com)控制台
