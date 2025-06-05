@@ -1,0 +1,30 @@
+{# GitLab Tag Push事件通知模板 #}
+## 🏷️ 标签推送通知
+**项目**: {{ project.name }}
+
+**标签**: {{ ref | replace('refs/tags/', '') }}
+
+**推送者**: {{ user_name }}
+
+{% if created_at %}
+**时间**: {{ created_at | date('YYYY-MM-DD HH:mm:ss') }}
+{% else %}
+**时间**: {{ commits[0].timestamp | date('YYYY-MM-DD HH:mm:ss') }}
+{% endif %}
+
+{% if commits and commits.length > 0 %}
+### 相关提交
+{% for commit in commits | slice(0, 5) %}
+- {{ commit.title | truncate(50) }} ([{{ commit.id | slice(0, 8) }}]({{ commit.url }}))
+{% endfor %}
+{% if commits.length > 5 %}
+... 以及其他 {{ commits.length - 5 }} 个提交
+{% endif %}
+{% endif %}
+
+{% if message %}
+### 标签信息
+{{ message }}
+{% endif %}
+
+[查看标签]({{ project.web_url }}/-/tags/{{ ref | replace('refs/tags/', '') }})

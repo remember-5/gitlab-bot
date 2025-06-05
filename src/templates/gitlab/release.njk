@@ -1,9 +1,13 @@
 {# GitLab Release事件通知模板 #}
 ## 🚀 版本发布
 **项目**: {{ project.name }}
+
 **版本**: {{ tag }}
+
 **标题**: {{ name }}
+
 **创建者**: {{ user.name }}
+
 **时间**: {{ created_at | date('YYYY-MM-DD HH:mm:ss') }}
 
 {% if description %}

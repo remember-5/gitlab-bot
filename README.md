@@ -5,11 +5,22 @@
 ## 功能特点
 
 - 支持GitLab多种事件类型：
-    - 代码推送 (Push)
-    - 合并请求 (Merge Request)
-    - 议题 (Issue)
-    - 流水线 (Pipeline)
-    - 评论 (Comment/Note)
+  - [x] Push events 代码推送
+  - [x] Tag push events
+  - [x] Comments 评论
+  - [ ] Confidential comments
+  - [x] Issue events 议题
+  - [ ] Confidential issue events
+  - [x] Merge request events 合并请求
+  - [ ] Job events
+  - [x] Pipeline events 流水线
+  - [ ] Wiki page events
+  - [ ] Deployment events
+  - [ ] Feature flag events
+  - [x] Releases events
+  - [ ] Emoji events
+  - [ ] Project or group access token events
+  - [ ] Vulnerability events
 - 使用Nunjucks模板引擎格式化通知内容
 - push-all-in-one支持, 暂时只做钉钉机器人, 后续会支持更多渠道
   - [ ] Server 酱(以及 Server 酱³)
@@ -29,6 +40,68 @@
   - [ ] Telegram
   - [ ] ntfy 等多种推送方式
 - 可部署到Vercel，无需服务器
+
+## 模式支持
+
+### 接口入参模式
+动态参数, push所需的参数均有接口提供，不同推送源的接口路径不同, 此项目只做`json to markdown`和`push`，
+
+例如gitlab webhook配置dingtalk机器人: https://xxxx.com/api/v1/webhook/dingtalk?access_token=xxx&secret=xxx
+
+例如gitlab webhook配置飞书机器人:  https://xxxx.com/api/v1/webhook/feishu?access_token=xxx&secret=xxx
+
+如上access_token和secret均需要由url传入
+
+优点:
+- 适用于做公共平台，提供公共接口,
+- 支持多项目模式(不同仓库不同的webhook)
+
+缺点:
+- 不支持多推送源
+- 安全性差
+
+ps: 考虑和研究单接口多推送源的可能性。
+
+### 环境变量模式
+gitlab webhook只需配置次项目url即可，不需加任何参数，参数全部读取环境变量。 适用于私有化部署，安全性强
+
+例如gitlab webhook配置dingtalk机器人: https://xxxx.com/api/v1/webhook?channel=dingtalk
+
+例如gitlab webhook配置飞书机器人: https://xxxx.com/api/v1/webhook?channel=feishu
+
+如上access_token和secret均不需要传入, 会从环境变量中读取
+
+优点:
+- 适用于私有化部署，安全性强
+- 支持多推送源
+
+缺点:
+- 需要自己部署
+- 不够灵活
+- 不支持多项目模式(不同仓库不同的webhook)
+
+### secret模式
+
+url中只传入access_token，secret从环境变量中读取。
+
+例如gitlab webhook配置dingtalk机器人: https://xxxx.com/api/v1/webhook?channel=dingtalk&access_token=xxx
+
+例如gitlab webhook配置飞书机器人: https://xxxx.com/api/v1/webhook?channel=feishu&access_token=xxx
+
+如上access_token需要传入，secret不需要传入, 会从环境变量中读取。secret配置方式为`DINGTALK_SECRET_`拼接ACCESS_TOKEN
+
+优点:
+- 适用于共有部署和私有化部署，安全性强
+- 支持多项目模式(不同仓库不同的webhook)
+
+缺点:
+- 不支持多推送源
+- 配置复杂
+
+```env
+DINGTALK_SECRET_${ACCESS_TOKEN}=xxxxxx
+```
+
 
 ## 技术栈
 - Express.js

@@ -46,9 +46,20 @@ nunjucksEnv.addFilter('date', function (str, format) {
 });
 
 // 添加字符串截取过滤器
-nunjucksEnv.addFilter('slice', function (str, start, end) {
-  if (!str) return '';
-  return String(str).slice(start, end);
+nunjucksEnv.addFilter('slice', function (input, start, end) {
+  if (!input) return '';
+  
+  // 处理字符串
+  if (typeof input === 'string') {
+    return String(input).slice(start, end);
+  }
+  
+  // 处理数组
+  if (Array.isArray(input)) {
+    return input.slice(start, end);
+  }
+  
+  return input;
 });
 
 // 添加字符串截断过滤器
