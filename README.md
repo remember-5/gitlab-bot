@@ -211,44 +211,54 @@ npm run dev
 
 
 # 部署到Vercel
-#### 方法一：使用Vercel Dashboard（推荐）
 
-1. 在GitHub/GitLab上创建一个仓库并推送代码
-2. 登录Vercel控制台，点击"New Project"
-3. 导入您的Git仓库
-4. 配置项目：
-    - Build Command: `npm run build`
-    - Output Directory: `dist`
-    - Install Command: `npm install`
-5. 在"Environment Variables"部分添加所需的环境变量：
+## Vercel部署指南
+
+### 使用Vercel Dashboard部署
+
+1. 登录[Vercel](https://vercel.com)控制台
+2. 点击"New Project"导入您的Git仓库
+3. 配置项目：
+   - Framework Preset: 选择"Other"
+   - Build Command: 留空（Vercel会自动处理）
+   - Output Directory: 留空
+   - Install Command: `npm install`
+
+4. 在"Environment Variables"部分添加所需的环境变量：
    ```
    DINGTALK_SECRET_xxxxxxxx=SECxxxxxxxx
    # 添加其他所需的环境变量
    ```
-6. 点击"Deploy"开始部署
 
-### 配置环境变量
+5. 点击"Deploy"开始部署
 
-在Vercel项目设置中，添加以下环境变量：
+### 部署后配置
 
-- `DINGTALK_SECRET_xxxxxxxx`: 钉钉机器人的Secret（为每个机器人添加一个）
+1. 部署成功后，您可以在Vercel控制台查看项目详情和访问URL
+2. 更新GitLab Webhook URL为：
+   ```
+   https://your-vercel-app.vercel.app/api/v1/gitlab/webhook?access_token=xxxxxxxx
+   ```
+   请将`your-vercel-app`替换为您的实际项目URL，`xxxxxxxx`替换为您的钉钉机器人access_token
 
-### 更新Webhook URL
+### 验证部署
 
-部署成功后，更新GitLab Webhook URL为：
-```
-https://your-vercel-app.vercel.app/api/v1/gitlab/webhook?access_token=xxxxxxxx
-```
+1. 使用以下URL测试API是否正常工作：
+   ```
+   https://your-vercel-app.vercel.app/api/v1
+   ```
+   应该返回一个包含欢迎信息的JSON响应
+
+2. 在GitLab中配置webhook并触发测试事件，检查钉钉是否收到通知
 
 ### 注意事项
 
 1. Vercel的免费计划有一些限制，如果您的webhook流量较大，可能需要升级到付费计划
 2. Vercel函数有执行时间限制（通常为10秒），确保您的webhook处理逻辑在此时间内完成
-3. 如果需要长期运行或处理大量请求，可以考虑其他部署选项如AWS、GCP或自托管服务器
-
+3. 如果遇到问题，可以在Vercel控制台的"Deployments"部分查看日志信息
 
 ## 贡献
-感谢[w3cj](https://github.com/w3cj)提供模版 https://github.com/w3cj/express-api-starter-ts
-
+- 感谢[w3cj](https://github.com/w3cj)提供模版 https://github.com/w3cj/express-api-starter-ts
+- https://github.com/vercel/examples/tree/main/solutions/express
 ## 许可证
 MIT 
