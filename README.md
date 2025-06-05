@@ -61,7 +61,7 @@
 ### 1. Fork或Clone本仓库
 
 ```bash
-git clone https://github.com/remember-5/gitlab-bot.git
+git clone https://github.com/remember5-templates/gitlab-bot
 cd gitlab-bot
 ```
 

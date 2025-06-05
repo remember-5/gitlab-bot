@@ -16,7 +16,7 @@
   "author": "wangjiahao <1332661444@qq.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/remember-5/gitlab-bot.git"
+    "url": "https://github.com/remember5-templates/gitlab-bot"
   },
   "license": "MIT",
   "dependencies": {
