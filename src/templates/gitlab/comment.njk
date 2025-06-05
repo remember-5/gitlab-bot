@@ -1,0 +1,24 @@
+{# GitLab Comment事件通知模板 #}
+## 💬 新评论
+**项目**: {{ project.name }}
+**评论者**: {{ user.name }}
+**时间**: {{ object_attributes.created_at | date('YYYY-MM-DD HH:mm:ss') }}
+
+{% if merge_request %}
+**类型**: 合并请求评论
+**标题**: {{ merge_request.title }}
+{% elif issue %}
+**类型**: 议题评论
+**标题**: {{ issue.title }}
+{% elif commit %}
+**类型**: 提交评论
+**提交**: {{ commit.id | slice(0, 8) }}
+{% elif snippet %}
+**类型**: 代码片段评论
+**标题**: {{ snippet.title }}
+{% endif %}
+
+**评论内容**:
+{{ object_attributes.note | truncate(200) }}
+
+[查看详情]({{ object_attributes.url }}) 

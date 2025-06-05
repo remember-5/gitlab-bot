@@ -1,0 +1,20 @@
+{# GitLab Merge Request事件通知模板 #}
+## 🔄 合并请求{{ action }}
+**项目**: {{ project.name }}
+
+**标题**: {{ object_attributes.title }}
+
+**状态**: {{ object_attributes.state }}
+
+**审核人**: {{ user.name }} @y914612354 @qme-uxinxpcm8
+
+**时间**: {{ object_attributes.created_at | date('YYYY-MM-DD HH:mm:ss') }}
+
+**从**: `{{ object_attributes.source_branch }}` → **到**: `{{ object_attributes.target_branch }}`
+
+{% if object_attributes.description %}
+### 描述
+{{ object_attributes.description | truncate(200) }}
+{% endif %}
+
+[查看合并请求]({{ object_attributes.url }})

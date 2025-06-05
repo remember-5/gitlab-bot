@@ -1,0 +1,13 @@
+{# GitLab Push事件通知模板 #}
+## 📌 代码推送通知
+**项目**: {{ project_name }}
+**分支**: {{ ref | replace('refs/heads/', '') }}
+**提交者**: {{ user_name }}
+**时间**: {{ event_time | date('YYYY-MM-DD HH:mm:ss') }}
+
+### 提交信息
+{% for commit in commits %}
+- {{ commit.message | truncate(50) }} ([{{ commit.id | slice(0, 8) }}]({{ commit.url }}))
+{% endfor %}
+
+[查看更多]({{ project_url }}/-/commits/{{ ref | replace('refs/heads/', '') }}) 

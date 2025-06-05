@@ -1,0 +1,13 @@
+{# GitLab Pipeline事件通知模板 #}
+## 🔄 流水线状态更新
+**项目**: {{ project.name }}
+**状态**: {% if object_attributes.status == 'success' %}✅ 成功{% elif object_attributes.status == 'failed' %}❌ 失败{% elif object_attributes.status == 'running' %}⏳ 运行中{% else %}{{ object_attributes.status }}{% endif %}
+**触发者**: {{ user.name }}
+**分支**: {{ object_attributes.ref }}
+**时间**: {{ object_attributes.created_at | date('YYYY-MM-DD HH:mm:ss') }}
+
+{% if commit %}
+**提交信息**: {{ commit.message | truncate(50) }}
+{% endif %}
+
+[查看流水线]({{ project.web_url }}/-/pipelines/{{ object_attributes.id }}) 

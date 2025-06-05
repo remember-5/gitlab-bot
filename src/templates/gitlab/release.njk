@@ -1,0 +1,21 @@
+{# GitLab Release事件通知模板 #}
+## 🚀 版本发布
+**项目**: {{ project.name }}
+**版本**: {{ tag }}
+**标题**: {{ name }}
+**创建者**: {{ user.name }}
+**时间**: {{ created_at | date('YYYY-MM-DD HH:mm:ss') }}
+
+{% if description %}
+### 描述
+{{ description | truncate(300) }}
+{% endif %}
+
+{% if assets.links and assets.links.length > 0 %}
+### 资源链接
+{% for link in assets.links %}
+- [{{ link.name }}]({{ link.url }})
+{% endfor %}
+{% endif %}
+
+[查看发布详情]({{ project.web_url }}/-/releases/{{ tag }})

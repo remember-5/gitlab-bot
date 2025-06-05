@@ -1,0 +1,22 @@
+{# GitLab Issue事件通知模板 #}
+## 📝 议题{{ action }}
+**项目**: {{ project.name }}
+**标题**: {{ object_attributes.title }}
+**状态**: {{ object_attributes.state }}
+**创建者**: {{ user.name }}
+**时间**: {{ object_attributes.created_at | date('YYYY-MM-DD HH:mm:ss') }}
+
+{% if object_attributes.description %}
+### 描述
+{{ object_attributes.description | truncate(200) }}
+{% endif %}
+
+{% if assignees.length > 0 %}
+**指派给**: {% for assignee in assignees %}{{ assignee.name }}{% if not loop.last %}, {% endif %}{% endfor %}
+{% endif %}
+
+{% if labels.length > 0 %}
+**标签**: {% for label in labels %}{{ label.title }}{% if not loop.last %}, {% endif %}{% endfor %}
+{% endif %}
+
+[查看议题]({{ object_attributes.url }}) 
