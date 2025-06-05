@@ -76,7 +76,15 @@ async function sendToDingTalk(accessToken: string, dingtalkSecret: string, title
       DINGTALK_ACCESS_TOKEN: accessToken,
       DINGTALK_SECRET: dingtalkSecret,
     });
-    await dingtalk.send(title, content, { msgtype: 'markdown', at: { atMobiles: [], atUserIds: [], isAtAll: false } });
+    const { status, data } = await dingtalk.send(title, content, { msgtype: 'markdown', at: { atMobiles: [], atUserIds: [], isAtAll: false } });
+    if (status !== 200) {
+      console.error(`发送钉钉通知失败: ${data}`);
+      return false;
+    }
+    if (data.errcode !== 0) {
+      console.error(`发送钉钉通知失败: ${data.errmsg}`);
+      return false;
+    }
     return true;
   } catch (error) {
     console.error(`发送钉钉通知失败: ${error}`);
