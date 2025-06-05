@@ -76,6 +76,8 @@ async function sendToDingTalk(accessToken: string, dingtalkSecret: string, title
       DINGTALK_ACCESS_TOKEN: accessToken,
       DINGTALK_SECRET: dingtalkSecret,
     });
+    console.log('accessToken', accessToken);
+    console.log('dingtalkSecret', dingtalkSecret);
     console.log('发送钉钉通知', title, content);
     dingtalk.send(title, content, { msgtype: 'markdown', at: { atMobiles: [], atUserIds: [], isAtAll: false } });
     return true;
