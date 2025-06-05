@@ -336,7 +336,8 @@ Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_mediu
 1. Vercel的免费计划有一些限制，如果您的webhook流量较大，可能需要升级到付费计划
 2. Vercel函数有执行时间限制（通常为10秒），确保您的webhook处理逻辑在此时间内完成
 3. 如果遇到问题，可以在Vercel控制台的"Deployments"部分查看日志信息
-4. 部署请选择亚洲地区(hkg1) dashboard -> Settings -> Functions -> Advanced Settings -> Function Regions 修改为Asia Pacific Hong Kong
+4. 部署请选择亚洲地区(hkg1) Dashboard -> Settings -> Functions -> Advanced Settings -> Function Regions 修改为Asia Pacific Hong Kong
+5. 国内直接访问vercel会出现超时,需要在vercel挂一个国内的域名才可以。Dashboard -> Settings -> Domains -> Add Domain 添加一个国内域名
 
 ## 贡献
 - 感谢[w3cj](https://github.com/w3cj)提供模版 https://github.com/w3cj/express-api-starter-ts
