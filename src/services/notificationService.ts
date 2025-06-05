@@ -14,15 +14,20 @@ function getTemplateInfo(event: GitLabEvent): { templatePath: string | null; tit
         templatePath: 'gitlab/push.njk',
         title: 'GitLab推送通知',
       };
-    case 'merge_request':
+    case 'tag_push':
       return {
-        templatePath: 'gitlab/merge_request.njk',
-        title: `GitLab合并请求${event.action || ''}通知`,
+        templatePath: 'gitlab/tag-push.njk',
+        title: 'GitLab Tag推送通知',
       };
     case 'issue':
       return {
         templatePath: 'gitlab/issue.njk',
         title: `GitLab议题${event.action || ''}通知`,
+      };
+    case 'merge_request':
+      return {
+        templatePath: 'gitlab/merge-request.njk',
+        title: `GitLab合并请求${event.action || ''}通知`,
       };
     case 'pipeline':
       return {

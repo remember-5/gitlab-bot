@@ -5,11 +5,22 @@
 ## 功能特点
 
 - 支持GitLab多种事件类型：
-    - 代码推送 (Push)
-    - 合并请求 (Merge Request)
-    - 议题 (Issue)
-    - 流水线 (Pipeline)
-    - 评论 (Comment/Note)
+  - [x] Push events 代码推送
+  - [x] Tag push events
+  - [x] Comments 评论
+  - [ ] Confidential comments
+  - [x] Issue events 议题
+  - [ ] Confidential issue events
+  - [x] Merge request events 合并请求
+  - [ ] Job events
+  - [x] Pipeline events 流水线
+  - [ ] Wiki page events
+  - [ ] Deployment events
+  - [ ] Feature flag events
+  - [x] Releases events
+  - [ ] Emoji events
+  - [ ] Project or group access token events
+  - [ ] Vulnerability events
 - 使用Nunjucks模板引擎格式化通知内容
 - push-all-in-one支持, 暂时只做钉钉机器人, 后续会支持更多渠道
   - [ ] Server 酱(以及 Server 酱³)
