@@ -76,7 +76,8 @@ async function sendToDingTalk(accessToken: string, dingtalkSecret: string, title
       DINGTALK_ACCESS_TOKEN: accessToken,
       DINGTALK_SECRET: dingtalkSecret,
     });
-    dingtalk.send(title, content, { msgtype: 'markdown', at: { atMobiles: [], atUserIds: ['y914612354', 'qme-uxinxpcm8'], isAtAll: false } });
+    console.log('发送钉钉通知', title, content);
+    dingtalk.send(title, content, { msgtype: 'markdown', at: { atMobiles: [], atUserIds: [], isAtAll: false } });
     return true;
   } catch (error) {
     console.error(`发送钉钉通知失败: ${error}`);
