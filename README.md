@@ -342,5 +342,15 @@ Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_mediu
 ## 贡献
 - 感谢[w3cj](https://github.com/w3cj)提供模版 https://github.com/w3cj/express-api-starter-ts
 - https://github.com/vercel/examples/tree/main/solutions/express
+
+## 参与项目
+拉取代码,提交PR，欢迎加入[GitLab Bot](https://gitlab.com/remember-5/gitlab-bot/-/issues)
+
+提交PR前请请运行测试，确保测试通过。
+
+测试流程....
+
+保证test/gitlab-hoos目录下的全部能输出即可
+
 ## 许可证
 MIT 
