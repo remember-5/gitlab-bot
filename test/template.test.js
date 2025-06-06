@@ -14,6 +14,7 @@ describe('POST /api/v1/gitlab/test', () => {
     .sort();
 
   // 为每个测试用例创建测试
+  // eslint-disable-next-line no-restricted-syntax
   testFiles.forEach(file => {
     const testCase = require(path.join(TEST_DIR, file));
     const eventType = testCase.body.object_kind;

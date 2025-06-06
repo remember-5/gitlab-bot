@@ -422,26 +422,10 @@ module.exports = {
 ### 运行测试
 
 ```bash
-# 启动本地服务
-npm run dev
-
-# 在另一个终端运行模板测试
-npm run test:templates
-
-# 如果需要指定不同的测试接口
-TEST_ENDPOINT=http://your-server.com/api/v1/gitlab/test npm run test:templates
+npm run test
 ```
 
 测试脚本会输出每个测试用例的渲染结果，以及测试是否通过。所有测试必须通过才能提交PR。
-
-## 参与项目
-拉取代码,提交PR，欢迎加入[GitLab Bot](https://github.com/remember-5/gitlab-bot/-/issues)
-
-提交PR前请请运行测试，确保测试通过。
-
-测试流程....
-
-保证test/gitlab-hoos目录下的全部能输出即可
 
 ## 许可证
 MIT 
