@@ -1,5 +1,7 @@
-// Release Hook
-export default {
+/**
+ * GitLab Release Hook事件测试用例
+ */
+module.exports = {
   headers: {
     "Content-Type": "application/json",
     "User-Agent": "GitLab/17.11.1-ee",
@@ -9,7 +11,7 @@ export default {
     "X-Gitlab-Instance": "https://hellogitlab.top",
     "X-Gitlab-Event-UUID": "1671f880-67c6-45cb-9dfa-f4707face4ba"
   },
-  request: {
+  body: {
     "id": 1,
     "created_at": "2020-11-02 12:55:12 UTC",
     "description": "v1.1 has been released",

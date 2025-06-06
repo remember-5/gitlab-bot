@@ -1,6 +1,8 @@
-// Release Hook
-export default {
-  headers:{
+/**
+ * GitLab Issue Hook事件测试用例
+ */
+module.exports = {
+  headers: {
     "Content-Type": "application/json",
     "User-Agent": "GitLab/17.11.1-ee",
     "Idempotency-Key": "9db5a20d-3bbb-416d-a265-c095052a9348",
@@ -9,7 +11,7 @@ export default {
     "X-Gitlab-Instance": "https://hellogitlab.top",
     "X-Gitlab-Event-UUID": "0f490e30-2db8-4091-91a1-52fe67960342"
   },
-  request: {
+  body: {
     "object_kind": "issue",
     "event_type": "issue",
     "user": {
@@ -21,21 +23,21 @@ export default {
     },
     "project": {
       "id": 1,
-      "name":"Gitlab Test",
-      "description":"Aut reprehenderit ut est.",
-      "web_url":"http://example.com/gitlabhq/gitlab-test",
-      "avatar_url":null,
-      "git_ssh_url":"git@example.com:gitlabhq/gitlab-test.git",
-      "git_http_url":"http://example.com/gitlabhq/gitlab-test.git",
-      "namespace":"GitlabHQ",
-      "visibility_level":20,
-      "path_with_namespace":"gitlabhq/gitlab-test",
-      "default_branch":"master",
+      "name": "Gitlab Test",
+      "description": "Aut reprehenderit ut est.",
+      "web_url": "http://example.com/gitlabhq/gitlab-test",
+      "avatar_url": null,
+      "git_ssh_url": "git@example.com:gitlabhq/gitlab-test.git",
+      "git_http_url": "http://example.com/gitlabhq/gitlab-test.git",
+      "namespace": "GitlabHQ",
+      "visibility_level": 20,
+      "path_with_namespace": "gitlabhq/gitlab-test",
+      "default_branch": "master",
       "ci_config_path": null,
-      "homepage":"http://example.com/gitlabhq/gitlab-test",
-      "url":"http://example.com/gitlabhq/gitlab-test.git",
-      "ssh_url":"git@example.com:gitlabhq/gitlab-test.git",
-      "http_url":"http://example.com/gitlabhq/gitlab-test.git"
+      "homepage": "http://example.com/gitlabhq/gitlab-test",
+      "url": "http://example.com/gitlabhq/gitlab-test.git",
+      "ssh_url": "git@example.com:gitlabhq/gitlab-test.git",
+      "http_url": "http://example.com/gitlabhq/gitlab-test.git"
     },
     "object_attributes": {
       "id": 301,

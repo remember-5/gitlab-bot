@@ -81,6 +81,14 @@ app.get<{}, MessageResponse>('/', (req, res) => {
   });
 });
 
+// 添加根路径健康检查路由
+app.get('/health', (req, res) => {
+  res.json({
+    status: 'ok',
+    timestamp: new Date().toISOString(),
+  });
+});
+
 app.use('/api/v1', api);
 
 app.use(middlewares.notFound);

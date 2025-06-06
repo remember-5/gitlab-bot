@@ -214,6 +214,21 @@ npm run dev
     - `access_token`: 必填参数，用于查找对应的钉钉机器人secret
     - 接受来自GitLab的JSON格式事件数据
 
+- `POST /api/v1/gitlab/test`: 测试GitLab事件模板渲染的接口
+    - 接受与webhook相同格式的GitLab事件数据
+    - 只渲染模板，不发送实际通知
+    - 返回渲染结果，包含标题、内容和模板路径
+    - 用于开发和调试模板
+
+- `GET /health`: 简单的健康检查接口
+    - 返回服务状态和当前时间戳
+    - 用于监控系统检查服务是否正常运行
+
+- `GET /api/v1/health`: 详细的健康检查接口
+    - 返回服务状态、运行时间、版本信息
+    - 包含系统资源信息（内存使用、CPU信息等）
+    - 用于监控和诊断系统状态
+
 ## 通知渠道
 
 当前使用`push-all-in-one`库支持发送通知到钉钉机器人。
@@ -336,10 +351,97 @@ Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_mediu
 1. Vercel的免费计划有一些限制，如果您的webhook流量较大，可能需要升级到付费计划
 2. Vercel函数有执行时间限制（通常为10秒），确保您的webhook处理逻辑在此时间内完成
 3. 如果遇到问题，可以在Vercel控制台的"Deployments"部分查看日志信息
-4. 部署请选择亚洲地区(hkg1) dashboard -> Settings -> Functions -> Advanced Settings -> Function Regions 修改为Asia Pacific Hong Kong
+4. 部署请选择亚洲地区(hkg1) Dashboard -> Settings -> Functions -> Advanced Settings -> Function Regions 修改为Asia Pacific Hong Kong
+5. 国内直接访问vercel会出现超时,需要在vercel挂一个国内的域名才可以。Dashboard -> Settings -> Domains -> Add Domain 添加一个国内域名
 
 ## 贡献
+
+### 贡献者
+
 - 感谢[w3cj](https://github.com/w3cj)提供模版 https://github.com/w3cj/express-api-starter-ts
 - https://github.com/vercel/examples/tree/main/solutions/express
+
+### 贡献指南
+
+我们欢迎并感谢任何形式的贡献！以下是贡献此项目的步骤：
+
+1. Fork 本仓库
+2. 创建你的特性分支 (`git checkout -b feature/amazing-feature`)
+3. 提交你的更改 (`git commit -m 'Add some amazing feature'`)
+4. 推送到分支 (`git push origin feature/amazing-feature`)
+5. 打开一个 Pull Request
+
+### PR提交流程
+
+在提交PR之前，请确保完成以下步骤：
+
+1. 确保代码符合项目的编码规范：
+   ```bash
+   npm run lint
+   ```
+
+2. 确保所有模板测试用例通过：
+   ```bash
+   # 先启动本地服务
+   npm run dev
+
+   # 新开一个终端，运行模板测试
+   npm run test
+   ```
+
+3. 如果你添加了新的模板或修改了现有模板，请添加或更新相应的测试用例：
+   - 在 `test/gitlab-hooks/` 目录下创建新的测试用例文件
+   - 测试用例文件应该导出一个包含 `header` 和 `body` 的对象
+   - 确保测试用例覆盖了你的更改
+
+4. 在PR描述中，请详细说明：
+   - 你做了哪些更改
+   - 为什么做这些更改
+   - 如何测试这些更改
+
+### 测试用例格式
+
+每个测试用例文件应该包含以下结构：
+
+```javascript
+module.exports = {
+  headers: {
+    'Content-Type': 'application/json',
+    'X-Gitlab-Event': 'Push Hook',
+    // 其他HTTP头
+  },
+  reqeust: {
+    "object_kind": "push", // 事件类型
+    // GitLab webhook事件的完整JSON数据
+  }
+};
+```
+
+测试脚本会将这些测试用例发送到模板测试接口，并验证渲染结果。
+
+### 运行测试
+
+```bash
+# 启动本地服务
+npm run dev
+
+# 在另一个终端运行模板测试
+npm run test:templates
+
+# 如果需要指定不同的测试接口
+TEST_ENDPOINT=http://your-server.com/api/v1/gitlab/test npm run test:templates
+```
+
+测试脚本会输出每个测试用例的渲染结果，以及测试是否通过。所有测试必须通过才能提交PR。
+
+## 参与项目
+拉取代码,提交PR，欢迎加入[GitLab Bot](https://github.com/remember-5/gitlab-bot/-/issues)
+
+提交PR前请请运行测试，确保测试通过。
+
+测试流程....
+
+保证test/gitlab-hoos目录下的全部能输出即可
+
 ## 许可证
 MIT 
