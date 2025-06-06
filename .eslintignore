@@ -2,4 +2,4 @@ node_modules/
 dist/
 coverage/
 test/gitlab-hooks/
-test/run-template-tests.js 
+test/template.test.js
