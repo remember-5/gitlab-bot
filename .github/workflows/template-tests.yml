@@ -1,0 +1,34 @@
+name: Template Tests
+
+on:
+  pull_request:
+    branches: [ main, master ]
+    paths:
+      - 'src/templates/**'
+      - 'src/services/notificationService.ts'
+      - 'test/gitlab-hooks/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm i
+
+    - name: Start server in background
+      run: |
+        npm run build
+        npm run start:dist &
+        sleep 5 # 等待服务器启动
+
+    - name: Run template tests
+      run: npm run test

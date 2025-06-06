@@ -109,3 +109,44 @@ export async function processGitLabEvent(event: GitLabEvent, accessToken: string
 
   return sendToDingTalk(accessToken, dingtalkSecret, title, content);
 }
+
+/**
+ * 测试GitLab事件模板渲染，不发送通知
+ * @param event GitLab事件
+ * @returns 渲染结果，包含标题和内容
+ */
+export function testGitLabEventTemplate(event: GitLabEvent): { 
+  success: boolean;
+  title: string; 
+  content: string | null;
+  templatePath: string | null;
+} {
+  const { templatePath, title } = getTemplateInfo(event);
+  
+  if (!templatePath) {
+    return { 
+      success: false,
+      title,
+      content: null,
+      templatePath,
+    };
+  }
+
+  try {
+    const content = nunjucks.render(templatePath, event);
+    return { 
+      success: true,
+      title,
+      content,
+      templatePath,
+    };
+  } catch (error) {
+    console.error(`渲染模板失败: ${error}`);
+    return { 
+      success: false,
+      title,
+      content: null,
+      templatePath,
+    };
+  }
+}

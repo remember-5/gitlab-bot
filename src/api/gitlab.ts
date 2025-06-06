@@ -1,6 +1,6 @@
 import express from 'express';
 import { GitLabEvent } from '../interfaces/GitLabEvent';
-import { processGitLabEvent } from '../services/notificationService';
+import { processGitLabEvent, testGitLabEventTemplate } from '../services/notificationService';
 
 const router = express.Router();
 
@@ -55,5 +55,38 @@ router.post('/webhook', async (req, res) => {
     });
   }
 });
+
+
+// GitLab模板测试接口
+router.post('/test', (req, res) => {
+  const event = req.body as GitLabEvent;
+
+  if (!event || !event.object_kind) {
+    return res.status(400).json({
+      success: false,
+      message: '无效的GitLab事件数据',
+    });
+  }
+
+  console.log(`测试GitLab ${event.object_kind}事件模板渲染`);
+
+  try {
+    // 使用测试函数，不发送实际通知
+    const result = testGitLabEventTemplate(event);
+    
+    return res.status(200).json({
+      ...result,
+      event_type: event.object_kind,
+    });
+  } catch (error) {
+    console.error('测试GitLab事件模板时发生错误:', error);
+    return res.status(500).json({
+      success: false,
+      message: '测试GitLab事件模板时发生错误',
+      error: String(error),
+    });
+  }
+});
+
 
 export default router;
